@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nosotros - AAMV</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/mobile-index+sobrenosotros.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+/* ===== HERO ===== */
+.hero-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('img/banners/banner-sobrenosotros.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero-banner h1 {
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  text-shadow:
+      -1px -1px 0 #D4AF37,
+       1px -1px 0 #D4AF37,
+      -1px  1px 0 #D4AF37,
+       1px  1px 0 #D4AF37;
+}
+.hero-banner p {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  color: #D4AF37;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* ===== HISTORIA + FILOSOFÍA ===== */
+.about-section {
+  padding: 4rem 2rem;
+  background: #fff;
+  height: 94vh;
+}
+.about-container {
+  max-width: 75rem;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.about-text {
+  flex: 1;
+  font-family: 'Roboto', sans-serif;
+  text-align: justify;
+  line-height: 1.8;
+  padding: 2rem;
+  border-left: 5px solid #D4AF37;
+}
+.about-text h2 {
+  color: #D4AF37;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+.about-image {
+  flex: 2;
+  text-align: center;
+}
+.about-image img {
+  border: 3px solid #D4AF37;
+  max-width: 100%;
+}
+
+/* ===== SEPARADOR ===== */
+.separador {
+  border: none;
+  height: 4px;
+  background: linear-gradient(to right, transparent, #D4AF37, transparent);
+  margin: 3rem auto;
+  width: 70%;
+  border-radius: 2px;
+}
+
+/* ===== CARRUSEL + SENSEI ===== */
+.carrusel-sensei {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: #fff;
+  height: 95vh;
+  box-sizing: border-box;
+}
+
+/* Carrusel */
+.carrusel2-wrapper {
+  flex: 2;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+}
+.carrusel2-container {
+  display: flex;
+  transition: transform 0.6s ease;
+  height: 100%;
+}
+.carrusel2-item {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carrusel2-item img {
+  width: 75%;
+  height: 100%;
+  object-fit: cover;
+  border: 3px solid #D4AF37;
+}
+
+/* Flechas */
+.carrusel-btn {
+  position: absolute;
+  background-color: #D4AF37;
+  top: 50%;
+  transform: translateY(-50%);
+  color: black;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 30%;
+  font-size: 1.5rem;
+  width: 2,5rem;
+  height: 2.5rem;
+  display: flex;
+}
+
+.carrusel-btn.prev { left: 10px; }
+.carrusel-btn.next { right: 10px; }
+
+/* Sensei */
+.sensei-info-side {
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  height: auto;
+  padding: 2rem;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+}
+.sensei-info-side img {
+  max-width: 250px;
+  border: 3px solid #D4AF37;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+}
+.sensei-info-side h2 {
+  font-size: 1.8rem;
+  color: #D4AF37;
+  margin-bottom: 1rem;
+}
+.sensei-info-side ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ===== BLOQUE SENSEIS ===== */
+.sensei-block {
+  background-color: #f9f9f9;
+  padding: 2.5rem 0 9.375rem;
+  position: relative;
+  background-image: url(img/banners/sensei-portada-mejorada.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 96vh;
+  max-height: 96vh;
+}
+  </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="menu-overlay"></div>
+    <header class="main-header">
+        <div class="header-container">
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" data-i18n="INICIO">INICIO</a></li>
+                    <li><a href="horarios.html" data-i18n="HORARIOS Y CUOTAS">HORARIOS Y CUOTAS</a></li>
+                    <li><a href="sobre-nosotros.html" data-i18n="SOBRE NOSOTROS">SOBRE NOSOTROS</a></li>
+                    <li><a href="disciplinas.html" data-i18n="DISCIPLINAS">DISCIPLINAS</a></li>
+                    <li><a href="contacto.html" data-i18n="CONTACTO">CONTACTO</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdYnd0GFH03TW-bh6wLno4TGgcVFXB9YG-rs-dQowQi70Ug4w/viewform?usp=header" target="_blank"><i data-i18n="PRUEBA UNA CLASE SIN COMPROMISO">PRUEBA UNA CLASE SIN COMPROMISO</i></a></li>
+                </ul>
+
+              <div class="close-menu">↪</div>
+              
+            </nav>
+
+          <div class="language-switcher">
+            <div class="custom-select-wrapper">
+              <div class="custom-select">
+                <div class="selected-option">
+                  <img src="banderas/es.svg" alt="Español" />
+                  <span>Español</span>
+                </div>
+                <ul class="options">
+                  <li data-lang="es">
+                    <img src="banderas/es.svg" alt="Español" />
+                    <span>Español</span>
+                  </li>
+                  <li data-lang="ca">
+                    <img src="banderas/es-ct.svg" alt="Català" />
+                    <span>Català</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner" style="
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+      url('img/banners/banner-sobrenosotros.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      background-attachment: fixed;">
+      <div class="hero-content">
+        <h1 style="text-shadow: -1px -1px 0 #D4AF37, 1px -1px 0 #D4AF37, -1px 1px 0 #D4AF37, 1px 1px 0 #D4AF37;" data-i18n="SOBRE NOSOTROS">SOBRE NOSOTROS</h1>
+        <p style="font-size: 20px; color: #D4AF37; font-family: 'Times New Roman', Times, serif"><i data-i18n="Descubre parte de nuestra historia">Descubre parte de nuestra historia</i></p>
+      </div>
+    </section>
+
+    <!-- Historia + Filosofía -->
+    <section class="about-section">
+      <div class="about-container">
+        <div class="about-text">
+          <h2 data-i18n="NUESTRA HISTORIA">Nuestra Historia</h2>
+          <p data-i18n="Historia1" style="font-family: Oswald; margin-bottom: 20px;">Fundada en 2010, la Academia Artes Marciales Vilanova (AAMV) nació del sueño de crear un espacio donde las artes marciales tradicionales y modernas pudieran enseñarse con autenticidad y pasión.</p>
+          <p data-i18n="Historia3" style="font-family: Oswald; margin-bottom: 20px;">Con el paso de los años, nos hemos convertido en un referente local, ofreciendo formación en disciplinas como Nihon Jujutsu, Kobudo, Iaijutsu y Karate, siempre manteniendo el respeto a la tradición.</p>
+          <p data-i18n="Historia2" style="font-family: Oswald; margin-bottom: 20px;">Desde nuestros humildes comienzos en un pequeño local, hemos crecido hasta convertirnos en un referente en la comarca, formando a cientos de estudiantes en los valores de las artes marciales.</p>
+          <h2 data-i18n="NUESTRA FILOSOFÍA">Nuestra Filosofía</h2>
+          <p data-i18n="Filosofia1" style="font-family: Oswald; margin-bottom: 20px;">Creemos que las artes marciales son un camino de superación personal, no solo un método de defensa. En AAMV enseñamos respeto, disciplina y autocontrol como pilares fundamentales.</p>
+        </div>
+        <div class="about-image">
+          <img src="img/instalaciones/dojo-principal.jpg" alt="Nuestro Dojo">
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloque Senseis -->
+    <section class="sensei-block">
+      
+      <!-- Título general -->
+      <div class="disciplines-header" style="text-align: center; margin-top: 1rem;">
+        <h2 data-i18n="Conoce a nuestros maestros" style="color: #D4AF37; font-family: 'Oswald', sans-serif; font-size: 2rem; margin-bottom: .5rem;">
+          Conoce a nuestros maestros
+        </h2>
+        <h3 data-i18n="Academia Artes Marciales Vilanova" style="font-size: 16px; font-family: 'Times New Roman', Times, serif; color: #f9f9f9;">
+          Academia Artes Marciales Vilanova
+        </h3>
+        <div class="divider" style="width: 80px; height: 3px; background: #D4AF37; margin: 1rem auto 0;"></div>
+      </div>
+
+      <!-- Contenedor de los senseis -->
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; margin-top: 2rem;">
+
+        <!-- Sensei 1 Giordano Napoli -->
+        <div class="sensei-card" style="max-width: 300px; text-align: center; font-family: 'Oswald', sans-serif; background: #fff; padding: 1.5rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+          <img src="img/equipo/sensei-principal.jpg" alt="Sensei Giordano Napoli" style="max-width: 100%; border: 3px solid #D4AF37; margin-bottom: 1rem; border-radius: 12px;">
+          <h3 style="color: #D4AF37; font-size: 1.4rem; margin-bottom: .5rem;">Giordano Napoli</h3>
+          <ul style="list-style: none; padding: 0; font-size: 1rem; line-height: 1.6;">
+            <li data-i18n="Cinturón Negro 4º Dan Karate">Cinturón Negro 4º Dan Karate</li>
+            <li data-i18n="Cinturón Negro 3º Dan Jiu Jitsu">Cinturón Negro 3º Dan Jiu Jitsu</li>
+            <li data-i18n="Cinturón Negro 3º Dan Kobudo">Cinturón Negro 3º Dan Kobudo</li>
+            <li data-i18n="Profesor Chi Kung Tai Chi">Profesor Chi Kung Tai Chi</li>
+            <li data-i18n="Entrenador Kick Boxing, K-1 y MMA">Entrenador Kick Boxing, K-1 y MMA</li>
+          </ul>
+        </div>
+
+        <!-- Sensei 2 Sara Ponce-->
+        <div class="sensei-card" style="max-width: 300px; text-align: center; font-family: 'Oswald', sans-serif; background: #fff; padding: 1.5rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+          <img src="img/equipo/sensei-sara.jpg" alt="Sensei Secundario" style="max-width: 100%; border: 3px solid #D4AF37; margin-bottom: 1rem; border-radius: 12px;">
+          <h3 style="color: #D4AF37; font-size: 1.4rem; margin-bottom: .5rem;">Sara Ponce</h3>
+          <ul style="list-style: none; padding: 0; font-size: 1rem; line-height: 1.6;">
+            <li data-i18n="Cinturón Negro 2º Dan Karate">Cinturón Negro 2º Dan Karate</li>
+            <li data-i18n="Cinturón Negro 2º Dan Kick Boxing">Cinturón Negro 2º Dan Kick Boxing</li>
+            <li data-i18n="Cinturón Negro 1º Dan Jiu Jitsu">Cinturón Negro 1º Dan Jiu Jitsu</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Bloque Carrusel -->
+    <section class="carrusel-sensei" style="height: 94vh; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 2rem; box-sizing: border-box;">
+
+      <!-- Título + subtítulo encima del carrusel -->
+      <div class="disciplines-header" style="text-align: center; margin-bottom: 2rem;">
+        <h2 data-i18n="NUESTRAS INSTALACIONES" style="color: #D4AF37; font-family: 'Oswald', sans-serif; font-size: 2.2rem; margin-bottom: .5rem;">
+          NUESTRAS INSTALACIONES
+        </h2>
+        <h3 data-i18n="SUB INSTALACIONES" style="font-size: 16px; font-family: 'Times New Roman', Times, serif; color: #333;">
+          Descubre cómo es nuestro dojo
+        </h3>
+        <div class="divider" style="width: 80px; height: 3px; background: #D4AF37; margin: 1rem auto 0;"></div>
+      </div>
+
+      <!-- Carrusel -->
+      <div class="carrusel2-wrapper" style="width: 100%; height: 100%;">
+        <div class="carrusel2-container" id="carrusel2-sensei">
+          <div class="carrusel2-item"><img src="img/instalaciones/dojo-principal.jpg"></div>
+          <div class="carrusel2-item"><img src="img/instalaciones/entrada.jpg"></div>
+          <div class="carrusel2-item"><img src="img/instalaciones/entrada2.jpg"></div>
+          <div class="carrusel2-item"><img src="img/instalaciones/zona-entrenamiento.jpg"></div>
+          <div class="carrusel2-item"><img src="img/instalaciones/zona-entrenamiento2.jpg"></div>
+          <div class="carrusel2-item"><img src="img/instalaciones/vestuarios.jpg"></div>
+        </div>
+        <button class="carrusel-btn prev" onclick="moverCarruselSensei(-1)">&#10094;</button>
+        <button class="carrusel-btn next" onclick="moverCarruselSensei(1)">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="img/logo/logosinletratransparente.png" alt="AAMV Logo">
+                <p data-i18n="Academia Artes Marciales Vilanova">Academia Artes Marciales Vilanova</p>
+                <p>AAMV</p>
+            </div>
+            <div class="footer-contact">
+                <h4 data-i18n="CONTACTO">CONTACTO</h4>
+                <p><i class="fas fa-map-marker-alt"></i> C/ Unió n° 98, 08800 Vilanova i la Geltrú</p>
+                <p><i class="fas fa-phone"></i> +34 666 691 106</p>
+                <p><i class="fas fa-envelope"></i> giordanonapoli@gmail.com</p>
+            </div>
+            <div class="footer-social">
+                <h4 data-i18n="SÍGUENOS">SÍGUENOS</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/aamcvng"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/artes_marciales_vilanova/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/asoc_arts_marcials_catalunya/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@Aamcatalunya"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="LO DE ABAJO DEL TODO">© 2025 AAMV - Academia Artes Marciales Vilanova. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/langs.js"></script>
+    <script src="js/script-fade.js"></script>
+    <script src="js/script-carrusel-sobrenosotros.js"></script>
+    <script src="js/menumobile.js"></script>
+</body>
+</html>

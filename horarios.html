@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAMV - Academia Artes Marciales Vilanova</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mobile-horarios.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos para la sección de disciplinas */
+        .disciplines-section {
+            background-color: #f9f9f9;
+            padding: 4rem 2rem;
+        }
+        
+        .disciplines-container {
+            max-width: 75rem;
+            margin: 0 auto;
+        }
+        
+        .disciplines-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .disciplines-header h2 {
+            color: #D4AF37;
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .disciplines-header h3 {
+            color: #333;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .divider {
+            height: 2px;
+            width: 100px;
+            background-color: #D4AF37;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="menu-overlay"></div>
+    <header class="main-header">
+        <div class="header-container">
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" data-i18n="INICIO">INICIO</a></li>
+                    <li><a href="horarios.html" data-i18n="HORARIOS Y CUOTAS">HORARIOS Y CUOTAS</a></li>
+                    <li><a href="sobre-nosotros.html" data-i18n="SOBRE NOSOTROS">SOBRE NOSOTROS</a></li>
+                    <li><a href="disciplinas.html" data-i18n="DISCIPLINAS">DISCIPLINAS</a></li>
+                    <li><a href="contacto.html" data-i18n="CONTACTO">CONTACTO</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdYnd0GFH03TW-bh6wLno4TGgcVFXB9YG-rs-dQowQi70Ug4w/viewform?usp=header" target="_blank"><i data-i18n="PRUEBA UNA CLASE SIN COMPROMISO">PRUEBA UNA CLASE SIN COMPROMISO</i></a></li>
+                </ul>
+
+            <div class="close-menu">↪</div>
+
+            </nav>
+
+          <div class="language-switcher">
+            <div class="custom-select-wrapper">
+              <div class="custom-select">
+                <div class="selected-option">
+                  <img src="banderas/es.svg" alt="Español" />
+                  <span>Español</span>
+                </div>
+                <ul class="options">
+                  <li data-lang="es">
+                    <img src="banderas/es.svg" alt="Español" />
+                    <span>Español</span>
+                  </li>
+                  <li data-lang="ca">
+                    <img src="banderas/es-ct.svg" alt="Català" />
+                    <span>Català</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner" style="
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+      url('img/banners/banner-sobrenosotros.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      background-attachment: fixed;">
+      <div class="hero-content">
+        <h1 style="text-shadow: -1px -1px 0 #D4AF37, 1px -1px 0 #D4AF37, -1px 1px 0 #D4AF37, 1px 1px 0 #D4AF37;" data-i18n="HORARIOS Y CUOTAS">HORARIOS Y CUOTAS</h1>
+        <p style="font-size: 20px; color: #D4AF37; font-family: 'Times New Roman', Times, serif"><i data-i18n="Encuentra tu clase y conoce nuestras tarifas">Encuentra tu clase y conoce nuestras tarifas</i></p>
+      </div>
+    </section>
+
+    <!-- Sección de Horario y Cuotas -->
+    <section class="disciplines-section">
+        <div class="disciplines-container">
+            <!-- Encabezado -->
+            <div class="disciplines-header">
+                <h2 data-i18n="NUESTRO HORARIO Y CUOTAS">NUESTRO HORARIO Y CUOTAS</h2>
+                <h3 style="font-size: 16px; font-family: 'Times New Roman', Times, serif;" data-i18n="Encuentra tu clase ideal">
+                    Encuentra tu clase ideal
+                </h3>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Contenedor Flex -->
+            <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                
+                <!-- Horarios -->
+                <div style="flex: 2; min-width: 300px;">
+                    <img src="img/horarios2.jpg" alt="Horarios">
+                </div>
+
+                <!-- Cuotas -->
+                <div style="flex: 1; min-width: 200px; background-color: #fff; padding: 1.5rem; border: 2px solid #D4AF37;">
+                    <h3 data-i18n="CUOTAS MENSUALES" style="color: #D4AF37; font-family: 'Oswald', sans-serif; text-align: center; margin-bottom: 1rem;">
+                        CUOTAS MENSUALES
+                    </h3>
+                    <hr style="border: 1px solid #D4AF37; margin-bottom: 1rem;">
+                    <ul style="list-style: none; padding: 0; font-family: 'Oswald', sans-serif; line-height: 1.8;">
+                        <li>Karate: 55 €</li>
+                        <li>K-1: 55 €</li>
+                        <li>Jiu Jitsu: 55 €</li>
+                        <li>Tai Chi: 50 €</li>
+                        <li data-i18n="Tai Chi mañanas: 45 €">Tai Chi mañanas: 45 €</li>
+                        <li data-i18n="MMA mañanas: 45 €">MMA mañanas: 45 €</li>
+                        <li data-i18n="1 vez a la semana: 35 €">1 vez a la semana: 35 €</li>
+                        <li data-i18n="PASE LIBRE: 65 €">PASE LIBRE: 65 €</li>
+                    </ul>
+                    <hr style="border: 1px solid #D4AF37; margin: 1rem 0;">
+                    <p data-i18n="MATRÍCULA: 35 €" style="text-align: center; font-weight: bold;">MATRÍCULA: 35 €</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="img/logo/logosinletratransparente.png" alt="AAMV Logo">
+                <p data-i18n="Academia Artes Marciales Vilanova">Academia Artes Marciales Vilanova</p>
+                <p>AAMV</p>
+            </div>
+            <div class="footer-contact">
+                <h4 data-i18n="CONTACTO">CONTACTO</h4>
+                <p><i class="fas fa-map-marker-alt"></i> C/ Unió n° 98, 08800 Vilanova i la Geltrú</p>
+                <p><i class="fas fa-phone"></i> +34 666 691 106</p>
+                <p><i class="fas fa-envelope"></i> giordanonapoli@gmail.com</p>
+            </div>
+            <div class="footer-social">
+                <h4 data-i18n="SÍGUENOS">SÍGUENOS</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/aamcvng"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/artes_marciales_vilanova/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/asoc_arts_marcials_catalunya/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@Aamcatalunya"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="LO DE ABAJO DEL TODO">© 2025 AAMV - Academia Artes Marciales Vilanova. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/langs.js"></script>
+    <script src="js/script-fade.js"></script>
+    <script src="js/menumobile.js"></script>
+</body>
+</html>

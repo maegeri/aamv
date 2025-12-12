@@ -1,0 +1,203 @@
+/* ===== HORARIOS Y CUOTAS - MÓVIL ===== */
+@media (max-width: 768px) {
+
+  /* ===== HEADER Y MENÚ MÓVIL ===== */
+  .main-header {
+    position: relative;
+    z-index: 50;
+  }
+
+  .main-header .nav-list {
+    display: flex;
+    flex-direction: column;
+    background: #111;
+    position: fixed;
+    top: 0;
+    right: -50%;
+    width: 50%;
+    height: 100vh;
+    text-align: center;
+    padding: 2rem 1rem;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.5);
+    border-left: 3px solid #D4AF37;
+    transition: right 0.5s ease;
+    z-index: 20;
+  }
+
+  .main-header .nav-list li {
+    margin: 1.5rem 0;
+    border-bottom: 1px solid #D4AF37;
+    padding-bottom: 0.5rem;
+  }
+
+  .main-header .nav-list li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .main-header .nav-list li a:hover {
+    color: #D4AF37;
+  }
+
+  .main-header .nav-list li:last-child {
+    display: none; /* Ocultamos "Prueba una clase gratis" */
+  }
+
+  .main-header .nav-list.active {
+    right: 0;
+  }
+
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0);
+    z-index: 15;
+    pointer-events: none;
+    transition: background 0.5s ease;
+  }
+
+  .menu-overlay.active {
+    background: rgba(0,0,0,0.5);
+    pointer-events: all;
+  }
+
+  .main-header .mobile-menu {
+    display: block;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.8rem;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 40;
+    text-shadow: 0 0 2px #000, 0 0 5px #000; /* borde negro */
+  }
+
+  .close-menu {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #D4AF37;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 45;
+    text-shadow: 0 0 2px #000, 0 0 5px #000; /* borde negro */
+  }
+
+  .main-header.menu-open .nav-list {
+    right: 0;
+  }
+
+  .main-header.menu-open .mobile-menu {
+    display: none;
+  }
+
+  .main-header.menu-open .close-menu {
+    display: block;
+  }
+
+  .nav-list.active ~ .mobile-menu,
+  .nav-list.active + .mobile-menu {
+    display: none;
+  }
+
+  .language-switcher {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+  }
+
+  /* ===== HERO ===== */
+  .hero-banner {
+    min-height: 101vh !important;
+    background-attachment: scroll !important;
+    padding: 1rem;
+    text-align: center;
+  }
+  .hero-banner h1 {
+    font-size: 2rem !important;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .hero-banner p {
+    font-size: 1rem !important;
+    text-align: center;
+  }
+
+  /* ===== SECCIÓN HORARIOS Y CUOTAS ===== */
+  .disciplines-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .disciplines-section > .disciplines-container > div[style*="display: flex"] {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .disciplines-section img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border: 3px solid #D4AF37;
+    border-radius: 10px;
+  }
+
+  .disciplines-section div[style*="background-color: #fff"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .disciplines-section h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .disciplines-section ul {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding-left: 1rem;
+  }
+
+  .disciplines-section p {
+    font-size: 1rem;
+  }
+
+  .disciplines-section hr {
+    margin: 0.8rem 0;
+  }
+
+  .disciplines-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .disciplines-header h3 {
+    font-size: 1rem;
+  }
+
+  .disciplines-header .divider {
+    width: 80px;
+    height: 2px;
+    margin: 0.8rem auto 1.5rem;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+}

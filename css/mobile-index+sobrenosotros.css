@@ -1,0 +1,391 @@
+/* ===== INDEX Y MENÚ - MÓVIL ===== */
+@media (max-width: 768px) {
+
+  /* Header */
+  .main-header {
+    position: relative;
+    z-index: 50;
+  }
+
+  .main-header .nav-list {
+    display: flex;
+    flex-direction: column;
+    background: #111;
+    position: fixed;
+    top: 0;
+    right: -50%;
+    width: 50%;
+    height: 100vh;
+    text-align: center;
+    padding: 2rem 1rem;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.5);
+    border-left: 3px solid #D4AF37;
+    transition: right 0.5s ease;
+    z-index: 20;
+  }
+
+  .main-header .nav-list li {
+    margin: 1.5rem 0;
+    border-bottom: 1px solid #D4AF37;
+    padding-bottom: 0.5rem;
+  }
+
+  .main-header .nav-list li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .main-header .nav-list li a:hover {
+    color: #D4AF37;
+  }
+
+  .main-header .nav-list li:last-child {
+    display: none; /* Ocultamos "Prueba una clase gratis" */
+  }
+
+  .main-header .nav-list.active {
+    right: 0; /* visible */
+  }
+
+  /* Overlay para cerrar menú tocando fuera */
+  .menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0);
+  z-index: 15;
+  pointer-events: none;
+  transition: background 0.5s ease;
+}
+
+  .menu-overlay.active {
+    background: rgba(0,0,0,0.5); /* negro semi-transparente */
+    pointer-events: all; /* ahora bloquea clics */
+  }
+
+  /* Icono de las tres rayas */
+  .main-header .mobile-menu {
+    display: block;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.8rem;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 40;
+    text-shadow: 0 0 2px #000, 0 0 5px #000; /* borde negro */
+  }
+
+  /* Botón de cerrar menú */
+  .close-menu {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #D4AF37;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 45; /* encima del menú */
+    text-shadow: 0 0 2px #000, 0 0 5px #000; /* borde negro */
+  }
+
+  /* Cuando el menú está abierto */
+  .main-header.menu-open .nav-list {
+    right: 0;
+  }
+
+  .main-header.menu-open .mobile-menu {
+    display: none;
+  }
+
+  .main-header.menu-open .close-menu {
+    display: block;
+  }
+
+  /* Ocultar el icono de las tres rayas mientras el menú está abierto */
+  .nav-list.active ~ .mobile-menu,
+  .nav-list.active + .mobile-menu {
+    display: none;
+  }
+
+  /* Mover selector de idioma a la izquierda */
+  .language-switcher {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+  }
+
+  /* Hero */
+  .hero-banner {
+    min-height: 101vh;
+    background-attachment: scroll !important;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 1.6rem !important;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  /* Federaciones */
+  .accordion-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .accordion-header img {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Carrusel */
+  .carrusel-wrapper {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 0.5rem;
+  }
+
+  .carrusel {
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  .carrusel .card {
+    flex: 0 0 85%;
+    max-width: 300px;
+    scroll-snap-align: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .carrusel .card-header {
+    gap: 0.5rem;
+  }
+
+  .carrusel .card-header img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .carrusel .stars {
+    font-size: 0.9rem;
+  }
+
+  .carrusel .card p {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .carrusel-container .carrusel-btn {
+    display: none !important;
+  }
+
+  .carrusel-container {
+    background-position: center center !important;
+    background-size: cover !important;
+    padding: 2rem 1rem;
+    min-height: 115vh; /* o más según tu diseño */
+  }
+
+  .carrusel-container h1 {
+    font-size: 1.2rem;
+  }
+
+  .carrusel-container h2 {
+    font-size: 1rem !important;
+    margin: 1rem 0;
+  }
+
+  /* Sobre Nosotros */
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-content {
+    width: 100%;
+  }
+
+  .about-image {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  /* Separación extra entre "Conviértete en un guerrero" y Sobre Nosotros */
+  .carrusel-container h1:nth-of-type(2) {
+    margin-bottom: 3rem;
+  }
+}
+
+/* ===== SOBRE NOSOTROS - MÓVIL ===== */
+@media (max-width: 768px) {
+  
+  /* Ajuste hero */
+  .hero-banner {
+    height: 50vh !important;
+    background-attachment: scroll !important;
+    padding: 1rem;
+  }
+  .hero-banner h1 {
+    font-size: 2rem !important;
+  }
+  .hero-banner p {
+    font-size: 1rem !important;
+  }
+
+  /* About Section */
+  .about-section {
+    height: auto !important; /* que se adapte al contenido */
+    padding: 2rem 1rem;
+  }
+  .about-container {
+    flex-direction: column; /* bloques uno encima de otro */
+    gap: 2rem;
+    align-items: center;
+  }
+  .about-text {
+    padding: 1rem;
+    border-left: none; /* quita el borde para no saturar */
+    text-align: left;
+  }
+  .about-text h2 {
+    font-size: 1.6rem;
+  }
+  .about-text p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .about-image {
+    width: 100%;
+  }
+  .about-image img {
+    width: 100%;
+    max-width: 400px;
+    border: 3px solid #D4AF37;
+  }
+
+  /* Separador */
+  .separador {
+    width: 90%;
+    margin: 2rem auto;
+  }
+
+  /* Sensei Block */
+  .sensei-block {
+    height: auto !important;
+    max-height: none !important;
+    padding: 2rem 1rem;
+    background-position: center center !important;
+    background-size: cover !important;
+  }
+  
+  .sensei-block .disciplines-header h2 {
+    font-size: 1.8rem;
+  }
+  .sensei-block .disciplines-header h3 {
+    font-size: 1rem;
+  }
+
+  /* Contenedor senseis */
+  .sensei-block > div[style*="display: flex"] {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .sensei-card {
+    max-width: 85%;        /* menos ancho */
+    padding: 0.8rem;       /* menos padding */
+    box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+    border-radius: 12px;   /* un poquito más pequeño */
+  }
+  .sensei-card img {
+    max-width: 90%;        /* reduce imagen */
+    height: auto;
+    border: 2px solid #D4AF37; /* un borde más delgado */
+    border-radius: 10px;
+  }
+  .sensei-card h3 {
+    font-size: 1rem;       /* nombre más pequeño */
+    margin-bottom: 0.5rem;
+  }
+  .sensei-card ul {
+    font-size: 0.85rem;    /* lista más compacta */
+    line-height: 1.4;
+    padding: 0 0.3rem;  
+  }
+
+  /* Carrusel Sensei */
+  .carrusel-sensei {
+    flex-direction: column;
+    padding: 1rem;
+    height: auto !important;
+  }
+
+  .carrusel2-wrapper {
+    position: relative; /* necesario para las flechas absolutas */
+  }
+  .carrusel2-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 3px solid #D4AF37;
+  }
+  .carrusel-btn {
+    display: flex !important;       /* antes estaba en none */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #D4AF37;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.9;
+  }
+
+  .carrusel-btn:hover {
+    opacity: 1;
+  }
+
+  .carrusel-btn.prev { left: 0.5rem; }
+  .carrusel-btn.next { right: 0.5rem; }
+}

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAMV - Academia Artes Marciales Vilanova</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mobile-disciplinas.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos para la sección de disciplinas */
+        .disciplines-section {
+            background-color: #f9f9f9;
+            padding: 4rem 2rem;
+        }
+        
+        .disciplines-container {
+            max-width: 75rem;
+            margin: 0 auto;
+        }
+        
+        .disciplines-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .disciplines-header h2 {
+            color: #D4AF37;
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .disciplines-header h3 {
+            color: #333;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .divider {
+            height: 2px;
+            width: 100px;
+            background-color: #D4AF37;
+            margin: 0 auto;
+        }
+        
+        .disciplines-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            gap: 2rem;
+        }
+        
+        .discipline-card {
+            position: relative;
+            flex: 1;
+            min-width: 250px;
+            height: 350px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .discipline-card-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.5s ease;
+            filter: brightness(0.7);
+        }
+        
+        .discipline-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            transition: all 0.5s ease;
+        }
+        
+        .discipline-card h4 {
+            color: #D4AF37;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .discipline-card p {
+            font-style: italic;
+            margin-bottom: 1rem;
+            min-height: 60px;
+            opacity: 0.9;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .info-button {
+            display: inline-block;
+            background-color: #D4AF37;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .info-button:hover {
+            background-color: #c19b2e;
+        }
+
+        .discipline-extra {
+            display: none;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #f0f0f0;
+            font-family: 'Roboto', sans-serif;
+            }
+
+            .discipline-card.open .discipline-extra {
+            display: block;
+            animation: fadeIn 0.5s ease;
+            }
+
+            @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+            }
+
+        
+        /* Efecto hover */
+        .discipline-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .discipline-card:hover .discipline-card-bg {
+            transform: scale(1.1);
+            filter: brightness(0.9);
+        }
+        
+        .discipline-card:hover .discipline-card-content {
+            background: color(transparent, rgba(0, 0, 0, 0.9));
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="menu-overlay"></div>
+    <header class="main-header">
+        <div class="header-container">
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" data-i18n="INICIO">INICIO</a></li>
+                    <li><a href="horarios.html" data-i18n="HORARIOS Y CUOTAS">HORARIOS Y CUOTAS</a></li>
+                    <li><a href="sobre-nosotros.html" data-i18n="SOBRE NOSOTROS">SOBRE NOSOTROS</a></li>
+                    <li><a href="disciplinas.html" data-i18n="DISCIPLINAS">DISCIPLINAS</a></li>
+                    <li><a href="contacto.html" data-i18n="CONTACTO">CONTACTO</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdYnd0GFH03TW-bh6wLno4TGgcVFXB9YG-rs-dQowQi70Ug4w/viewform?usp=header" target="_blank"><i data-i18n="PRUEBA UNA CLASE SIN COMPROMISO">PRUEBA UNA CLASE SIN COMPROMISO</i></a></li>
+                </ul>
+            </nav>
+
+          <div class="language-switcher">
+            <div class="custom-select-wrapper">
+              <div class="custom-select">
+                <div class="selected-option">
+                  <img src="banderas/es.svg" alt="Español" />
+                  <span>Español</span>
+                </div>
+                <ul class="options">
+                  <li data-lang="es">
+                    <img src="banderas/es.svg" alt="Español" />
+                    <span>Español</span>
+                  </li>
+                  <li data-lang="ca">
+                    <img src="banderas/es-ct.svg" alt="Català" />
+                    <span>Català</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner" style="
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+      url('img/banners/banner-sobrenosotros.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      background-attachment: fixed;">
+      <div class="hero-content">
+        <h1 style="text-shadow: -1px -1px 0 #D4AF37, 1px -1px 0 #D4AF37, -1px 1px 0 #D4AF37, 1px 1px 0 #D4AF37;" data-i18n="DISCIPLINAS">DISCIPLINAS</h1>
+        <p style="font-size: 20px; color: #D4AF37; font-family: 'Times New Roman', Times, serif"><i data-i18n="Todas nuestras enseñanzas en AAMV">Todas nuestras enseñanzas en AAMV</i></p>
+      </div>
+    </section>
+
+    <!-- Sección de Disciplinas -->
+    <section class="disciplines-section">
+        <div class="disciplines-container">
+        <div class="disciplines-header">
+            <h2 data-i18n="NUESTRAS DISCIPLINAS">NUESTRAS DISCIPLINAS</h2>
+            <h3 data-i18n="Todo lo que aprenderás en AAMV" style="font-size: 16px; font-family: 'Times New Roman', Times, serif;">Todo lo que aprenderás en AAMV</h3>
+            <div class="divider"></div>
+        </div>
+
+        <!-- Fila 1 -->
+        <div class="disciplines-row">
+            <!-- Karate -->
+            <div class="discipline-card">
+            <div class="discipline-card-bg" style="background-image: url(img/disciplinas/karate.jpg);"></div>
+            <div class="discipline-card-content">
+                <h4>KARATE</h4>
+                <p data-i18n="DESC KARATE">El arte de la mano vacía</p>
+                <a href="#" class="info-button toggle-info" data-i18n="MÁS INFORMACIÓN">MÁS INFORMACIÓN</a>
+                <div class="discipline-extra">
+                <p data-i18n="DISCIPLINA-KARATE">
+                    El Karate es un arte marcial tradicional de Okinawa que combina técnicas de golpeo, defensa y respiración. 
+                    Su práctica fortalece cuerpo y mente, fomenta la disciplina, el autocontrol y el respeto hacia los demás.
+                </p>
+                </div>
+            </div>
+            </div>
+
+            <!-- Jiu Jitsu -->
+            <div class="discipline-card">
+            <div class="discipline-card-bg" style="background-image: url(img/disciplinas/jiu-jitsu.jpg);"></div>
+            <div class="discipline-card-content">
+                <h4>JIU JITSU</h4>
+                <p data-i18n="DESC JIU JITSU">El arte suave de la defensa personal</p>
+                <a href="#" class="info-button toggle-info" data-i18n="MÁS INFORMACIÓN">MÁS INFORMACIÓN</a>
+                <div class="discipline-extra">
+                <p data-i18n="DISCIPLINA-JIUJITSU">
+                    El Jiu Jitsu japonés se centra en la defensa personal mediante luxaciones, derribos, estrangulaciones y control del adversario. 
+                    Es ideal para desarrollar eficacia técnica y autocontrol en situaciones de contacto.
+                </p>
+                </div>
+            </div>
+            </div>
+
+            <!-- K-1 -->
+            <div class="discipline-card">
+            <div class="discipline-card-bg" style="background-image: url(img/disciplinas/k1.jpg);"></div>
+            <div class="discipline-card-content">
+                <h4>K-1</h4>
+                <p data-i18n="DESC K-1">Kick Boxing de potencia y técnica</p>
+                <a href="#" class="info-button toggle-info" data-i18n="MÁS INFORMACIÓN">MÁS INFORMACIÓN</a>
+                <div class="discipline-extra">
+                <p data-i18n="DISCIPLINA-K-1">
+                    El K-1 es una modalidad deportiva de Kick Boxing que combina técnicas de puños, patadas y rodillas. 
+                    Es un sistema dinámico, explosivo y de alta exigencia física, que mejora la condición física y la capacidad competitiva.
+                </p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Fila 2 -->
+        <div class="disciplines-row">
+            <!-- MMA -->
+            <div class="discipline-card">
+            <div class="discipline-card-bg" style="background-image: url(img/disciplinas/mma.jpg);"></div>
+            <div class="discipline-card-content">
+                <h4>MMA</h4>
+                <p data-i18n="DESC MMA">Artes marciales mixtas</p>
+                <a href="#" class="info-button toggle-info" data-i18n="MÁS INFORMACIÓN">MÁS INFORMACIÓN</a>
+                <div class="discipline-extra">
+                <p data-i18n="DISCIPLINA-MMA">
+                    Las MMA combinan técnicas de diferentes artes marciales como el Jiu Jitsu, el Muay Thai, el Karate y la lucha olímpica. 
+                    Su práctica desarrolla versatilidad, fuerza, resistencia y estrategia para el combate completo.
+                </p>
+                </div>
+            </div>
+            </div>
+
+            <!-- Kobudo -->
+            <div class="discipline-card">
+            <div class="discipline-card-bg" style="background-image: url(img/disciplinas/kobudo.jpg);"></div>
+            <div class="discipline-card-content">
+                <h4>KOBUDO</h4>
+                <p data-i18n="DESC KOBUDO">Armas tradicionales de Okinawa</p>
+                <a href="#" class="info-button toggle-info" data-i18n="MÁS INFORMACIÓN">MÁS INFORMACIÓN</a>
+                <div class="discipline-extra">
+                <p data-i18n="DISCIPLINA-KOBUDO">
+                    El Kobudo es el arte marcial de las armas tradicionales de Okinawa, como el bo, tonfa, nunchaku y sai. 
+                    Su práctica mejora la coordinación, la precisión y la conexión con la tradición marcial antigua.
+                </p>
+                </div>
+            </div>
+            </div>
+
+            <!-- Chi Kung / Tai Chi -->
+            <div class="discipline-card">
+            <div class="discipline-card-bg" style="background-image: url(img/disciplinas/tai-chi.jpg);"></div>
+            <div class="discipline-card-content">
+                <h4>CHI KUNG TAI CHI</h4>
+                <p data-i18n="DESC CHI KUNG TAI CHI">Salud y meditación en movimiento</p>
+                <a href="#" class="info-button toggle-info" data-i18n="MÁS INFORMACIÓN">MÁS INFORMACIÓN</a>
+                <div class="discipline-extra">
+                <p data-i18n="DISCIPLINA-CHIKUNGTAICHI">
+                    El Chi Kung Tai Chi es un arte interna china que se centra en la respiración, la energía vital y el movimiento fluido. 
+                    Favorecen la salud, la relajación, el equilibrio y el bienestar físico y mental.
+                </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="img/logo/logosinletratransparente.png" alt="AAMV Logo">
+                <p data-i18n="Academia Artes Marciales Vilanova">Academia Artes Marciales Vilanova</p>
+                <p>AAMV</p>
+            </div>
+            <div class="footer-contact">
+                <h4 data-i18n="CONTACTO">CONTACTO</h4>
+                <p><i class="fas fa-map-marker-alt"></i> C/ Unió n° 98, 08800 Vilanova i la Geltrú</p>
+                <p><i class="fas fa-phone"></i> +34 666 691 106</p>
+                <p><i class="fas fa-envelope"></i> giordanonapoli@gmail.com</p>
+            </div>
+            <div class="footer-social">
+                <h4 data-i18n="SÍGUENOS">SÍGUENOS</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/aamcvng"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/artes_marciales_vilanova/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/asoc_arts_marcials_catalunya/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@Aamcatalunya"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="LO DE ABAJO DEL TODO">© 2025 AAMV - Academia Artes Marciales Vilanova. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/langs.js"></script>
+    <script src="js/script-fade.js"></script>
+    <script src="js/script-disciplines.js"></script>
+    <script src="js/menumobile.js"></script>
+</body>
+</html>
