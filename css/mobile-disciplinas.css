@@ -1,0 +1,243 @@
+/* ===== DISCIPLINAS - MÓVIL ===== */
+@media (max-width: 768px) {
+
+  /* ===== HEADER Y MENÚ MÓVIL ===== */
+  .main-header {
+    position: relative;
+    z-index: 50;
+  }
+
+  .main-header .nav-list {
+    display: flex;
+    flex-direction: column;
+    background: #111;
+    position: fixed;
+    top: 0;
+    right: -50%;
+    width: 50%;
+    height: 100vh;
+    text-align: center;
+    padding: 2rem 1rem;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.5);
+    border-left: 3px solid #D4AF37;
+    transition: right 0.5s ease;
+    z-index: 20;
+  }
+
+  .main-header .nav-list li {
+    margin: 1.5rem 0;
+    border-bottom: 1px solid #D4AF37;
+    padding-bottom: 0.5rem;
+  }
+
+  .main-header .nav-list li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .main-header .nav-list li a:hover {
+    color: #D4AF37;
+  }
+
+  .main-header .nav-list li:last-child {
+    display: none; /* Ocultamos "Prueba una clase gratis" */
+  }
+
+  .main-header .nav-list.active {
+    right: 0;
+  }
+
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0);
+    z-index: 15;
+    pointer-events: none;
+    transition: background 0.5s ease;
+  }
+
+  .menu-overlay.active {
+    background: rgba(0,0,0,0.5);
+    pointer-events: all;
+  }
+
+  .main-header .mobile-menu {
+    display: block;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.8rem;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 40;
+    text-shadow: 0 0 2px #000, 0 0 5px #000; /* borde negro */
+  }
+
+  .close-menu {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #D4AF37;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 45;
+    text-shadow: 0 0 2px #000, 0 0 5px #000; /* borde negro */
+  }
+
+  .main-header.menu-open .nav-list {
+    right: 0;
+  }
+
+  .main-header.menu-open .mobile-menu {
+    display: none;
+  }
+
+  .main-header.menu-open .close-menu {
+    display: block;
+  }
+
+  .nav-list.active ~ .mobile-menu,
+  .nav-list.active + .mobile-menu {
+    display: none;
+  }
+
+  .language-switcher {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+  }
+
+  /* ===== HERO ===== */
+  .hero-banner {
+    min-height: 101vh !important;
+    background-attachment: scroll !important;
+    padding: 1rem;
+    text-align: center;
+  }
+  .hero-banner h1 {
+    font-size: 2rem !important;
+    margin-bottom: 0.5rem;
+  }
+  .hero-banner p {
+    font-size: 1rem !important;
+  }
+
+  /* ===== SECCIÓN DISCIPLINAS ===== */
+  .disciplines-section {
+    padding: 2rem 1rem;
+  }
+
+  .disciplines-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .disciplines-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .disciplines-header h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .disciplines-header .divider {
+    width: 60px;
+    height: 2px;
+    margin: 0.5rem auto 1rem;
+  }
+
+  .disciplines-row {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .discipline-card {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+  }
+
+  .discipline-card-bg {
+    height: 200px;
+    filter: brightness(0.8);
+  }
+
+  .discipline-card-content {
+    padding: 1rem;
+  }
+
+  .discipline-card h4 {
+    font-size: 1.2rem;
+    color: #D4AF37; /* color de relleno */
+    text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,  
+        -1px 1px 0 #000,  
+        1px 1px 0 #000;
+  }
+
+  .discipline-card p {
+    font-size: 0.9rem;
+    min-height: auto;
+  }
+
+  .info-button {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .discipline-extra {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  /* Efectos hover desactivados para móviles */
+  .discipline-card:hover {
+    transform: none;
+  }
+
+  .discipline-card:hover .discipline-card-bg {
+    transform: none;
+    filter: brightness(0.8);
+  }
+
+    /* Cuando se abre la info, ocultamos el texto normal */
+    .discipline-card.open .discipline-card-content > p {
+        display: none;
+    }
+
+    /* Mostramos solo el extra */
+    .discipline-card.open .discipline-extra {
+        display: block;
+        animation: fadeIn 0.5s ease;
+    }
+
+  /* ===== FOOTER ===== */
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footer-logo img {
+    max-width: 120px;
+    margin-bottom: 1rem;
+  }
+
+  .footer-contact p, .footer-social .social-icons a {
+    font-size: 0.9rem;
+  }
+}
